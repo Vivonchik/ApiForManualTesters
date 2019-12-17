@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Manual.Testers.Api.Host.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Manual.Testers.Api.Host.Controllers
@@ -27,10 +28,11 @@ namespace Manual.Testers.Api.Host.Controllers
 
         // POST api/values
         [Route("Order")]
+        [Authorize]
         [HttpPost]
         public void Post([FromBody]Order order)
         {
-
+            var a = User.Identity.Name;
         }
 
         // PUT api/values/5
