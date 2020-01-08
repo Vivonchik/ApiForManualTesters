@@ -13,6 +13,7 @@ namespace Manual.Testers.Api.Host.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        /*
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
@@ -26,20 +27,15 @@ namespace Manual.Testers.Api.Host.Controllers
         {
             return "value";
         }
+        */
 
         // POST api/values
         [Route("Order")]
         [Authorize]
         [HttpPost]
-        public void Post([FromBody]Order order)
+        public int Post([FromBody]Order order)
         {
             var a = User.Identity.Name;
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
         }
     }
 }
